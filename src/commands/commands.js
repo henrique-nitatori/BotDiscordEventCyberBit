@@ -1,7 +1,8 @@
+const Help = require('./help')
 module.exports = (function() {
 
     const commands =  {
-        "Help": function() {console.log("help")},
+        "Help": function() {Help(commands)},
         "Userinfo": function() {console.log("userinfo")},
         "Serverinfo": function() {console.log("serverinfo")},
         "Cargos": function() {console.log("cargos")},
