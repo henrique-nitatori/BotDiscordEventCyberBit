@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const { token } = require('../bot.config.json')
 const client = new Discord.Client();
 
 //Mensagem quando um boot entrar no servidor
@@ -17,5 +18,4 @@ client.on('message', msg => {
 client.on('disconnect', () => {
 
 })
-
-client.login('token');
+client.login(token);
