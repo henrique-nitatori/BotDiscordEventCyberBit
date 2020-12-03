@@ -1,9 +1,20 @@
 const Discord = require('discord.js');
 
-function help(commands) {
+function help(commands, msg) {
     let commandWithDescription = []
     Object.keys(commands).map(command => setDescription(command, commandWithDescription))
-    
+    let commandWithDescriptionString = ""
+
+    commandWithDescription.forEach(command => {
+        commandWithDescriptionString += `${command.command}: ${command.description} \n`
+    })
+
+    embed = new Discord.MessageEmbed()
+      .setColor("#5c0fd9")
+      .setTitle("Help")
+      .setDescription(commandWithDescriptionString)
+
+    msg.channel.send(embed)
 }
 function setDescription(command, commandWithDescription) {
     const commandDescription = {

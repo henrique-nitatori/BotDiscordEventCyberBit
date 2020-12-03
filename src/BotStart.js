@@ -12,10 +12,7 @@ client.on('ready', () => {
 client.on('message', msg => {
   if (!msg.content.startsWith(prefix)) return;
   const command = msg.content.split(' ')[1]
-  
-  Commands.execute(command)
-
-  msg.reply('pong');
+  const t = Commands.execute(command, msg)
 });
 
 //Message quando o bot disconectar
