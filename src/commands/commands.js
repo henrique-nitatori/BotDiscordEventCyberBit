@@ -1,15 +1,11 @@
-
-const userInfo = require('./userInfo')
-
+const Help = require('./help')
+const Serverinfo = require('./serverinfo')
 module.exports = (function() {
 
     const commands =  {
-        "Help": {
-            action: function() {console.log("help")},
-            description: 'test'
-        },
-        "Userinfo": userInfo,
-        "Serverinfo": function() {console.log("serverinfo")},
+        "Help": function(msg) {Help(commands, msg)},
+        "Userinfo": function() {console.log("userinfo")},
+        "Serverinfo": function(msg) {Serverinfo(msg)},
         "Cargos": function() {console.log("cargos")},
     }
 
