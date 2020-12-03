@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const Commands = require('./commands/commands')
 const { token } = require('../bot.config.json')
 const { prefix } = require('../config.json')
 const client = new Discord.Client();
@@ -9,9 +10,10 @@ client.on('ready', () => {
 
 //Quando for digitado no chat 
 client.on('message', msg => {
-  console.log(prefix)
-  console.log(msg.content)
   if (!msg.content.startsWith(prefix)) return;
+  const command = msg.content.split(' ')[1]
+  
+  Commands.execute(command)
 
   msg.reply('pong');
 });
