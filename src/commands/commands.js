@@ -13,10 +13,10 @@ module.exports = (function() {
         "Cargos": function() {console.log("cargos")},
     }
 
-    function execute(command, msg) {
+    function execute(command, msg, client) {
        const commandToBeExecuted = commands[command]
-       if(!commandToBeExecuted) return
-       commandToBeExecuted(msg)
+       if(!commandToBeExecuted) return false
+       return  commandToBeExecuted(msg, client)
     }
 
     return {

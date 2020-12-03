@@ -12,7 +12,11 @@ client.on('ready', () => {
 client.on('message', msg => {
   if (!msg.content.startsWith(prefix)) return;
   const command = msg.content.split(' ')[1]
-  const t = Commands.execute(command, msg)
+  const commandReturn = Commands.execute(command, msg)
+
+  if(!commandReturn) {
+    msg.channel.send(`O comando ${command} não existe!`)
+  }
 });
 
 //Message quando o bot disconectar
