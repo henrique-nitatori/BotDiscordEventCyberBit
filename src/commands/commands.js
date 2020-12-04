@@ -1,12 +1,16 @@
-const Help = require('./help')
-const Serverinfo = require('./serverinfo')
-module.exports = (function() {
 
+const userInfo = require('./userInfo')
+const Help = require('./help');
+const { play, skip, stop } = require('./playMusic')
+module.exports = (function() {
     const commands =  {
         "Help": function(msg) {Help(commands, msg)},
-        "Userinfo": function() {console.log("userinfo")},
-        "Serverinfo": function(msg) {Serverinfo(msg)},
+        "Userinfo": userInfo,
+        "Serverinfo": function() {console.log("serverinfo")},
         "Cargos": function() {console.log("cargos")},
+        "p": play,
+        "skip": skip,
+        "stop": stop
     }
 
     function execute(command, msg, client) {
