@@ -22,6 +22,9 @@ function setDescription(command, commandWithDescription) {
         Userinfo: "O comando Userinfo devolve as informações de usuários",
         Serverinfo: "O comando Serverinfo devolve as informações do servidor",
         Cargos: "O comando Cargo exibe as informações de cargo do usuário",
+        p: "toca uma musica no atual canal de voz, ex: +sam p rebola pro pai",
+        skip: "pula a música atual",
+        stop: "para de tocar a música",
     }
     const description = commandDescription[command]
     commandWithDescription.push({command: command, description: description ||  ''})
